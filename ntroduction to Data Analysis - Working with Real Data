@@ -1,0 +1,29 @@
+# Simple Sales Dataset (Product Name, Quantity Sold, Price per Unit)
+sales_data = [
+    {"product": "Laptop", "quantity": 12, "price": 55000},
+    {"product": "Mouse", "quantity": 40, "price": 500},
+    {"product": "Keyboard", "quantity": 25, "price": 1500},
+    {"product": "Monitor", "quantity": 10, "price": 9000},
+    {"product": "Headphones", "quantity": 30, "price": 1200},
+]
+
+# Calculate total sales and track best selling product
+total_sales = 0
+best_seller = None
+max_revenue = 0
+
+for item in sales_data:
+    revenue = item["quantity"] * item["price"]
+    total_sales += revenue
+
+    if revenue > max_revenue:
+        max_revenue = revenue
+        best_seller = item["product"]
+
+# Generate Report
+print("------ Sales Report ------")
+print(f"Total Sales Revenue: ₹{total_sales}")
+
+print(f"Best Selling Product: {best_seller}")
+print(f"Revenue From Best Seller: ₹{max_revenue}")
+print("---------------------------")
